@@ -1,5 +1,6 @@
 body {
 	background: lightgrey;
+	font-family: "Arial", Helvetica, sans-serif;
 }
 
 a {
@@ -34,7 +35,7 @@ a:hover {
 	background-color: white;
 	height: 250px;
 	padding-top: 30px;
-	padding-bottom: 80px;
+	padding-bottom: 120px;
 	padding-left:20px;
 	padding-right:20px;
 }
@@ -47,7 +48,7 @@ a:hover {
 	height: 100%;
 	width: 90%;
 	float: left;
-	margin-left: 35px;
+	margin-left: 20px;
 }
 
 .tf-queue-header {
@@ -56,8 +57,7 @@ a:hover {
 
 .tf-queue-option {
 	opacity: 0.5;	
-	font-size: 15;
-	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 15;	
 	font-weight: bold;
 	margin-right: 10px;
 }
@@ -137,4 +137,29 @@ a:hover {
 	background-image: url("../images/yes.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+.tf-queue-footer {
+	text-align: center;
+	color: rgb(42, 42, 42);
+}
+
+.details-img {
+	height: 90px;
+	width: 270px;
+	background: lavender;
+	float:left;
+	margin: 3px;
+}
+
+.details-button {
+	float: right;
+	border: 1px solid;
+	padding: 2px;
+	border-radius: 6px;
+	background-color: lightgrey;
+}
+
+.details-button:hover {
+	cursor: pointer;
 }
