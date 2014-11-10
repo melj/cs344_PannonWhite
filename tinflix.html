@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TinFlix Prototype</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/tinflix.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/tinflix.css" />
+</head>
+<body>
+	<div id="tf-main">
+		<div id="tf-header"></div>
+		<div id="tf-queue">
+			<div class="tf-queue-header">
+				<span class="tf-queue-option selected" val="featured">Featured</span>
+				<span class="tf-queue-option" val="recommended">Recommended</span>
+				<span class="tf-queue-option" val="popular">Popular</span>
+			</div>
+			<div class="tf-queue-window">
+				<div class="tf-queue-nav tf-nav-left"></div>			
+				<div class="tf-queue-content">
+					<div class="next-course-option course-option" style="height: 80%; margin-top:20px; border-right: none" data-order="1"><span class="course-title">CPSC 202</span></div>
+					<div class="next-course-option course-option" style="height: 90%; margin-top:12px; border-right: none" data-order="2"><span class="course-title">CPSC 202</span></div>
+					<div class="course-option course-main">
+						<h1>MATH 310</h1>
+						<p style="height: 50%; overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<div class="tinder-course-controls">
+							<span class="no-icon tf-icon-button" style="float: left"></span>
+							<a style="margin-left: auto; margin-right: auto">Details</a>
+							<span class="yes-icon tf-icon-button" style="float: right"></span>
+						</div>
+					</div>
+					<div class="next-course-option course-option" style="height: 90%; margin-top:12px; border-left: none" data-order="4"><span class="course-title">CPSC 202</span></div>
+					<div class="next-course-option course-option" style="height: 80%; margin-top:20px; border-left: none" data-order="5"><span class="course-title">CPSC 202</span></div>
+				</div>
+				<div class="tf-queue-nav tf-nav-right"></div>
+			</div>
+		</div>
+		<div id="tf-footer"></div>
+	</div>
+	<script>
+		$(window).load(function() {			
+
+			$(".tf-queue-nav").click(function(e) {		
+
+			});
+
+			$(".tf-queue-option").click(function(e) {		
+				$(".tf-queue-option").removeClass("selected");
+				$(e.target).addClass("selected");
+			});
+		});
+	</script>
+</body>
+</html>
