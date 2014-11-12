@@ -43,6 +43,7 @@ function renderQueue(key) {
 	$courseSlide.find(".course-title").html(course.title);
 	$courseSlide.find(".course-short-description").html(course.shortDescription);
 	$courseSlide.find(".course-description").html(course.description);
+	$courseSlide.attr("course-key", key)
 
 	var courseIndexes = [];
 	var tmpIndex;
@@ -118,5 +119,15 @@ $(window).load(function() {
 		renderQueue(currQ[0]);
 
 		$(".tf-queue-footer").toggle(queue == "recommended");
+	});
+
+	$(".no-icon.tf-icon-button").click(function(e) {
+		var courseKey = $(e.target).closest(".main-course-option").attr("course-key");
+		if (window.confirm("Are you sure you want to remove " + courseMap[courseKey].code + " from your queue?")) {
+			var index = currQ.indexOf(courseKey);
+			currQ.splice(index, 1);		
+			currIndex++;	
+			renderQueue(currQ[currIndex]);
+		}
 	});
 });
