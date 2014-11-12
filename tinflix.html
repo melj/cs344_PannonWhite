@@ -11,39 +11,48 @@
 		<div id="tf-header"></div>
 		<div id="tf-queue">
 			<div class="tf-queue-header">
-				<span class="tf-queue-option selected" val="featured">Featured</span>
-				<span class="tf-queue-option" val="recommended">Recommended</span>
-				<span class="tf-queue-option" val="popular">Popular</span>
+				<span class="queue-header-option selected" target-queue="featured">Featured</span>
+				<span class="queue-header-option" target-queue="recommended">Recommended</span>
+				<span class="queue-header-option" target-queue="popular">Popular</span>
 			</div>
 			<div class="tf-queue-window">
-				<div class="tf-queue-nav tf-nav-left"></div>			
+				<div class="tf-queue-nav queue-nav-left"></div>			
 				<div class="tf-queue-content">
-					<div class="next-course-option course-option" style="height: 80%; margin-top:20px; border-right: none" data-order="1"><span class="course-title">CPSC 202</span></div>
-					<div class="next-course-option course-option" style="height: 90%; margin-top:12px; border-right: none" data-order="2"><span class="course-title">CPSC 202</span></div>
-					<div class="course-option course-main">
-						<div class="course-side">
-							<h1>MATH 310</h1>
-							<p style="height: 110px; overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<div class="next-course-option course-option" course-key="" style="height: 80%; margin-top:20px; border-right: none">
+						<span class="next-course-option-code"></span>
+					</div>
+					<div class="next-course-option course-option" course-key="" style="height: 90%; margin-top:12px; border-right: none">
+						<span class="next-course-option-code"></span>
+					</div>
+					<div class="course-option main-course-option" course-key="">
+						<div class="course-side course-side-front">
+							<h1 class="course-code"></h1>
+							<span class="course-title"></span>
+							<p class="course-short-description"></p>
 						</div>
-						<div class="tinder-course-controls">
-							<span class="no-icon tf-icon-button" style="float: left"></span>
-							<a class="details-link" style="margin-left: auto; margin-right: auto">Details</a>
-							<a class="details-link" style="margin-left: auto; margin-right: auto; display:none">Back</a>
-							<span class="yes-icon tf-icon-button" style="float: right"></span>
+						<div class="tf-course-controls">
+							<span class="no-icon tf-icon-button"></span>
+							<a class="details-link course-side-front">Details</a>
+							<a class="details-link">Back</a>
+							<span class="yes-icon tf-icon-button"></span>
 						</div>
-						<div class="course-side" style="display:none">
+						<div class="course-side hide">
 							<div class="details-img"></div>
 							<div class="details-img"></div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p class="course-description"></p>
 							<span class="details-button">See more info</span>
 						</div>
 					</div>
-					<div class="next-course-option course-option" style="height: 90%; margin-top:12px; border-left: none" data-order="4"><span class="course-title">CPSC 202</span></div>
-					<div class="next-course-option course-option" style="height: 80%; margin-top:20px; border-left: none" data-order="5"><span class="course-title">CPSC 202</span></div>
+					<div class="next-course-option course-option" course-key="" style="height: 90%; margin-top:12px; border-left: none">
+						<span class="next-course-option-code"></span>
+					</div>
+					<div class="next-course-option course-option" course-key="" style="height: 80%; margin-top:20px; border-left: none">
+						<span class="next-course-option-code"></span>
+					</div>
 				</div>
-				<div class="tf-queue-nav tf-nav-right"></div>
+				<div class="tf-queue-nav queue-nav-right"></div>
 			</div>
-			<h4 class="tf-queue-footer">Want better recommendations? Click <a>here</a>!</h4>
+			<h4 class="tf-queue-footer hide">Want better recommendations? Click <a>here</a>!</h4>
 		</div>
 		<div id="tf-footer"></div>
 	</div>
