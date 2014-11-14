@@ -7,6 +7,36 @@
 	<link rel="stylesheet" type="text/css" href="css/tinflix.css" />
 </head>
 <body>
+	<div class="hide" id="tf-modal-questionnaire">
+		<div class="tf-modal-backdrop close-questionnaire-modal"></div>
+		<div class="tf-modal-content">
+			<div class="tf-modal-header">
+				<h3>Want better Recommendations?</h3>
+				<span class="close-questionnaire-modal x-button tf-button">x</span>
+			</div>
+			<div class="tf-modal-main">
+				<div class="questionnaire-welcome">
+					It's time to get to know you better! Answer some of the following questions to help us recommend better courses.<br/><br/>
+					You can exit the questionnaire at any time, but the more you answer, the better our suggestions.<br/><br/>
+					Click on the <b>Next</b> button to get started!
+				</div>
+				<div class="questionnaire-question-slide hide">
+					<p class="questionnaire-question">How do you feel about <b><span class="question-topic"></span></b>?</p>
+					<div>
+						<label class="questionnaire-radio"><input type="radio" name="questionnaire-radio" />Hate it</label>
+						<label class="questionnaire-radio"><input type="radio" name="questionnaire-radio" />Dislike it</label>
+						<label class="questionnaire-radio"><input type="radio" name="questionnaire-radio" />Meh</label>
+						<label class="questionnaire-radio"><input type="radio" name="questionnaire-radio" />Like it</label>
+						<label class="questionnaire-radio"><input type="radio" name="questionnaire-radio" />Love it</label>
+					</div>
+				</div>
+			</div>
+			<div class="tf-modal-footer">
+				<span class="tf-button questionnaire-next-button">Next</span>
+				<span class="tf-button close-questionnaire-modal">Cancel</span>
+			</div>
+		</div>
+	</div>
 	<div id="tf-main">
 		<div id="tf-header"></div>
 		<div id="tf-queue">
@@ -40,7 +70,7 @@
 							<div class="details-img"></div>
 							<div class="details-img"></div>
 							<p class="course-description"></p>
-							<span class="details-button">See more info</span>
+							<span class="tf-button details-button">See more info</span>
 						</div>
 					</div>
 					<div class="next-course-option course-option" course-key="" style="height: 90%; margin-top:12px; border-left: none">
@@ -52,7 +82,7 @@
 				</div>
 				<div class="tf-queue-nav queue-nav-right"></div>
 			</div>
-			<h4 class="tf-queue-footer hide">Want better recommendations? Click <a>here</a>!</h4>
+			<h4 class="tf-queue-footer hide">Want better recommendations? Click <a class="questionnaire-button">here</a>!</h4>
 		</div>
 		<div id="tf-footer"></div>
 	</div>

@@ -1,3 +1,7 @@
+var questionnaireTopics = [
+	"Computer Science", "Psychology", "Math", "Physics", "English", "Anthropology", "Media Arts", "Cooking", "Wine Tasting"
+];
+
 var courseMap = {
 	'CPSC310' : {title: "The course name", code: "CPSC 310", shortDescription: "Short description for CPSC 310", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
 	'MATH100' : {title: "The course name", code: "MATH 100", shortDescription: "Short description for MATH 100", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
@@ -19,14 +23,15 @@ var courseMap = {
 	'PHIL114' : {title: "The course name", code: "PHIL 114", shortDescription: "Short description for PHIL 114", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."}
 };
 
-
 var featuredQ =    ['CPSC310', 'MATH100', 'CHEM204', 'GERM101', 'PSYC200', 'ASIA340', 'PSYC102'];
-var recommenedQ1 = ['CPSC344', 'ENGL112', 'ARTH160', 'ANTH302', 'ENGL300', 'CPSC110', 'PHYS230'];
-var recommenedQ2 = ['ASIA340', 'ENGL112', 'ANTH302', 'FREN100', 'SPAN220', 'MEDI420', 'PHIL114'];
+var recommendedQ1 = ['CPSC344', 'ENGL112', 'ARTH160', 'ANTH302', 'ENGL300', 'CPSC110', 'PHYS230'];
+var recommendedQ2 = ['ASIA340', 'ENGL112', 'ANTH302', 'FREN100', 'SPAN220', 'MEDI420', 'PHIL114'];
 var popularQ =     ['MATH100', 'ASIA340', 'CPSC344', 'CPSC110', 'PHYS230', 'MEDI420', 'PHIL114'];
+var recommendedQ = recommendedQ1;
 
 var currQ = featuredQ;
 var currIndex = 0;
+var currQuestion = 0;
 
 var NUM_COURSES_BESIDE = 2;
 
@@ -69,6 +74,16 @@ function renderQueue(key) {
 	}	
 };
 
+function centerQuestionnaireModal() {
+	var $modal = $("#tf-modal-questionnaire").find(".tf-modal-content");
+	$modal.css("margin-left", window.innerWidth / 2 - $modal.width() / 2);
+	$modal.css("margin-top", window.innerHeight / 2 - $modal.height() / 2);
+};
+
+window.onresize = function(e) {
+	centerQuestionnaireModal();
+};
+
 $(window).load(function() {		
  	renderQueue(currQ[currIndex]);
 	
@@ -106,7 +121,7 @@ $(window).load(function() {
 		var queue = $headerOption.attr("target-queue");
 		switch(queue) {
 			case "recommended":
-				currQ = recommenedQ1;				
+				currQ = recommendedQ;				
 				break;
 			case "featured":
 				currQ = featuredQ;
@@ -114,19 +129,59 @@ $(window).load(function() {
 			case "popular":
 				currQ = popularQ;
 				break;
-		}
-		
+		}		
 		renderQueue(currQ[0]);
-
 		$(".tf-queue-footer").toggle(queue == "recommended");
 	});
+
+	$(".questionnaire-button").click(function(e) {
+		centerQuestionnaireModal();
+		var $modal = $("#tf-modal-questionnaire");
+		$modal.find(".questionnaire-welcome").show();
+		$modal.find(".questionnaire-question-slide").hide();
+		$modal.show();		
+	});
+
+	$(".close-questionnaire-modal").click(function(e) {
+		var $modal = $("#tf-modal-questionnaire");
+		$modal.find("input[type=radio]").prop("checked", false);
+		$modal.hide();
+	});
+
+	$(".questionnaire-next-button").click(function(e) {
+		var $modal = $("#tf-modal-questionnaire");
+		var $slide = $modal.find(".questionnaire-question-slide");		
+		
+		$modal.find(".questionnaire-welcome").hide();
+		
+		if ($slide.find("input[type=radio]:checked").length > 0) {
+			questionnaireTopics.splice(currQuestion, 1);
+		} else {
+			currQuestion++;
+		}
+
+		if (currQuestion >= questionnaireTopics.length) {
+			currQuestion = 0;
+		}
+
+		var topic = questionnaireTopics[currQuestion];
+
+		if (topic != null) {
+			$slide.find(".question-topic").html(topic);
+			$slide.find("input[type=radio]").prop("checked", false);
+		} else {
+			$slide.html("<b>Yay</b>! There are no more questions for you!");			
+		}
+		
+		$slide.show();
+	});	
 
 	$(".no-icon.tf-icon-button").click(function(e) {
 		var courseKey = $(e.target).closest(".main-course-option").attr("course-key");
 		if (window.confirm("Are you sure you want to remove " + courseMap[courseKey].code + " from your queue?")) {
 			var index = currQ.indexOf(courseKey);
-			currQ.splice(index, 1);		
-			currIndex++;	
+			currQ.splice(index, 1);	
+			currIndex = index;		
 			renderQueue(currQ[currIndex]);
 		}
 	});

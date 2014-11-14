@@ -1,6 +1,7 @@
 body {
 	background: lightgrey;
 	font-family: "Arial", Helvetica, sans-serif;
+	margin: 0px;
 }
 
 a {
@@ -16,10 +17,99 @@ a:hover {
 	display: none;
 }
 
+.tf-button {
+	background: white;
+	border: 1px solid;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+
+.tf-button:hover {
+	cursor: pointer;
+}
+
+.tf-button:active {
+	background: grey;
+}
+
+.tf-modal-backdrop {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: black;
+	opacity: 0.5;
+	z-index: 2;
+}
+
+.tf-modal-content {
+	position: fixed;
+	height: 350px;
+	width: 550px;
+	background: white;
+	z-index: 3;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+
+.tf-modal-header {
+	height: 25px;
+	background: lightgrey;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+
+.tf-modal-header h3 {
+	float: left;
+	margin: 0px;
+}
+
+.tf-modal-header .x-button {
+	float: right;
+}
+
+.tf-modal-main {
+	padding: 10px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.tf-modal-main .questionnaire-question {
+	font-size: 20px;
+}
+
+.tf-modal-main .questionnaire-radio {
+	margin: 0px 10px;
+}
+
+.tf-modal-main .questionnaire-radio:hover {
+	cursor: pointer;
+}
+
+.tf-modal-footer {
+	background: lightgrey;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	border-top: 1px solid black;
+}
+
+.tf-modal-footer .tf-button {
+	float: right;
+	margin: 8px;
+}
+
 #tf-main {
+	position: relative;
 	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
+	z-index: 1;
 }
 
 #tf-header {
@@ -111,6 +201,7 @@ a:hover {
 
 .tf-queue-content .main-course-option {
 	width: 540px;
+	height: 250px;
 	padding: 10px;
 	text-align: center;
 }
@@ -165,9 +256,6 @@ a:hover {
 
 .main-course-option .details-button {
 	float: right;
-	border: 1px solid;
-	padding: 2px 5px;
-	border-radius: 3px;
 }
 
 .main-course-option .details-button:hover {
