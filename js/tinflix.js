@@ -132,10 +132,11 @@ $(window).load(function() {
 				currQ = popularQ;
 				break;
 			case "wishlist":
-				currQ = wishlist;
+				currQ = wishlist;				
 				break;
 		}		
 		renderQueue(currQ[0]);
+		$(".yes-icon").toggle(queue != "wishlist");
 		$(".tf-queue-footer").toggle(queue == "recommended");
 	});
 
