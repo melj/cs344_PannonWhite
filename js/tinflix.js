@@ -29,6 +29,8 @@ var recommendedQ2 = ['ASIA340', 'ENGL112', 'ANTH302', 'FREN100', 'SPAN220', 'MED
 var popularQ =     ['MATH100', 'ASIA340', 'CPSC344', 'CPSC110', 'PHYS230', 'MEDI420', 'PHIL114'];
 var recommendedQ = recommendedQ1;
 
+var wishlist = [];
+
 var currQ = featuredQ;
 var currIndex = 0;
 var currQuestion = 0;
@@ -128,6 +130,9 @@ $(window).load(function() {
 				break;
 			case "popular":
 				currQ = popularQ;
+				break;
+			case "wishlist":
+				currQ = wishlist;
 				break;
 		}		
 		renderQueue(currQ[0]);

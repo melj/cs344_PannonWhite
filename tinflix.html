@@ -14,8 +14,9 @@
 				<h3>Want better Recommendations?</h3>
 				<span class="close-questionnaire-modal x-button tf-button">x</span>
 			</div>
-			<div class="tf-modal-main">
-				<div class="questionnaire-welcome">
+			<div class="tf-modal-main">				
+				<div class="questionnaire-welcome">					
+					<div class="warning-msg"><b>Please note!</b> This is a prototype and will not accurately update your recommended courses</div>
 					It's time to get to know you better! Answer some of the following questions to help us recommend better courses.<br/><br/>
 					You can exit the questionnaire at any time, but the more you answer, the better our suggestions.<br/><br/>
 					Click on the <b>Next</b> button to get started!
@@ -44,6 +45,7 @@
 				<span class="queue-header-option selected" target-queue="featured">Featured</span>
 				<span class="queue-header-option" target-queue="recommended">Recommended</span>
 				<span class="queue-header-option" target-queue="popular">Popular</span>
+				<span class="queue-header-option hide" target-queue="wishlist">Wishlist</span>
 			</div>
 			<div class="tf-queue-window">
 				<div class="tf-queue-nav queue-nav-left"></div>			
@@ -61,10 +63,10 @@
 							<p class="course-short-description"></p>
 						</div>
 						<div class="tf-course-controls">
-							<span class="no-icon tf-icon-button"></span>
+							<span class="no-icon tf-icon-button" title="Remove from Queue"></span>
 							<a class="details-link course-side-front">Details</a>
 							<a class="details-link">Back</a>
-							<span class="yes-icon tf-icon-button"></span>
+							<span class="yes-icon tf-icon-button" title="Add to Wishlist"></span>
 						</div>
 						<div class="course-side hide">
 							<div class="details-img"></div>
@@ -82,7 +84,7 @@
 				</div>
 				<div class="tf-queue-nav queue-nav-right"></div>
 			</div>
-			<h4 class="tf-queue-footer hide">Want better recommendations? Click <a class="questionnaire-button">here</a>!</h4>
+			<div class="tf-queue-footer hide"><span class="tf-button questionnaire-button">Get Better Recommendations</span></div>
 		</div>
 		<div id="tf-footer"></div>
 	</div>

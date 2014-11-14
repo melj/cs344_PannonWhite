@@ -73,7 +73,19 @@ a:hover {
 .tf-modal-main {
 	padding: 10px;
 	text-align: center;
-	margin-top: 50px;
+}
+
+.warning-msg {
+	background: #a01c2a;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 10px;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.tf-modal-main .questionnaire-question-slide {
+	margin-top: 80px;
 }
 
 .tf-modal-main .questionnaire-question {
@@ -237,9 +249,14 @@ a:hover {
 }
 
 .tf-queue-footer {
-	text-align: center;
-	color: rgb(42, 42, 42);
-	padding-top: 10px;
+	text-align: center;	
+	padding-top: 37px;
+}
+
+.tf-queue-footer .questionnaire-button {
+	background: #2a5673;
+	color:white;
+	padding: 5px 10px;
 }
 
 .main-course-option .details-img {
