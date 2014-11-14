@@ -29,7 +29,7 @@ var recommendedQ2 = ['ASIA340', 'ENGL112', 'ANTH302', 'FREN100', 'SPAN220', 'MED
 var popularQ =     ['MATH100', 'ASIA340', 'CPSC344', 'CPSC110', 'PHYS230', 'MEDI420', 'PHIL114'];
 var recommendedQ = recommendedQ1;
 
-var wishlist = [];
+var wishlist = recommendedQ2;
 
 var currQ = featuredQ;
 var currIndex = 0;

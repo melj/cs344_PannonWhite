@@ -259,6 +259,10 @@ a:hover {
 	padding: 5px 10px;
 }
 
+.tf-queue-footer .questionnaire-button:active {
+	background: #244961
+}
+
 .main-course-option .details-img {
 	height: 90px;
 	width: 48%;
