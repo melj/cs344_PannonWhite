@@ -84,6 +84,17 @@ a:hover {
 	color: white;
 }
 
+.no-courses-msg {
+	text-align: center;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	font-style: italic;
+	color: darkgrey;
+}
+
 .tf-modal-main .questionnaire-question-slide {
 	margin-top: 80px;
 }
@@ -148,6 +159,7 @@ a:hover {
 }
 
 .tf-queue-window {
+	position: relative;
 	height: 100%;
 }
 
@@ -271,11 +283,6 @@ a:hover {
 	margin: 3px;
 }
 
-.main-course-option .details-link {
-	margin-right: auto;
-	margin-left: auto;
-}
-
 .main-course-option .details-button {
 	float: right;
 }
@@ -293,6 +300,5 @@ a:hover {
 }
 
 .main-course-option .course-short-description {
-	height: 110px; 
-	overflow: hidden;
+	margin: 40px 0px;
 }

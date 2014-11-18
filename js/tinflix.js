@@ -1,79 +1,106 @@
 var questionnaireTopics = [
-	"Computer Science", "Psychology", "Math", "Physics", "English", "Anthropology", "Media Arts", "Cooking", "Wine Tasting"
+	"Computer Science", "Psychology", "Math", "Physics", "English", "Anthropology", "Media Arts", "Cooking", "Wine Tasting", "Biology"
 ];
 
 var courseMap = {
-	'CPSC310' : {title: "The course name", code: "CPSC 310", shortDescription: "Short description for CPSC 310", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'MATH100' : {title: "The course name", code: "MATH 100", shortDescription: "Short description for MATH 100", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'CHEM204' : {title: "The course name", code: "CHEM 204", shortDescription: "Short description for CHEM 204", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'GERM101' : {title: "The course name", code: "GERM 101", shortDescription: "Short description for GERM 101", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'PSYC200' : {title: "The course name", code: "PSYC 200", shortDescription: "Short description for PSYC 200", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'ASIA340' : {title: "The course name", code: "ASIA 340", shortDescription: "Short description for ASIA 340", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'PSYC102' : {title: "The course name", code: "PSYC 102", shortDescription: "Short description for PSYC 102", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'CPSC344' : {title: "The course name", code: "CPSC 344", shortDescription: "Short description for CPSC 344", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'ENGL112' : {title: "The course name", code: "ENGL 112", shortDescription: "Short description for ENGL 112", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'ARTH160' : {title: "The course name", code: "ARTH 160", shortDescription: "Short description for ARTH 160", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'ANTH302' : {title: "The course name", code: "ANTH 302", shortDescription: "Short description for ANTH 302", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'ENGL300' : {title: "The course name", code: "ENGL 300", shortDescription: "Short description for ENGL 300", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'CPSC110' : {title: "The course name", code: "CPSC 110", shortDescription: "Short description for CPSC 110", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'PHYS230' : {title: "The course name", code: "PHYS 230", shortDescription: "Short description for PHYS 230", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'FREN100' : {title: "The course name", code: "FREN 100", shortDescription: "Short description for FREN 100", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'SPAN220' : {title: "The course name", code: "SPAN 220", shortDescription: "Short description for SPAN 220", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'MEDI420' : {title: "The course name", code: "MEDI 420", shortDescription: "Short description for MEDI 420", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."},
-	'PHIL114' : {title: "The course name", code: "PHIL 114", shortDescription: "Short description for PHIL 114", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus lectus eget nisl pretium ultricies. Etiam pulvinar elit tellus, sit amet gravida ligula sagittis vitae. Vivamus condimentum lacus eu bibendum convallis."}
+	'CPSC310' : {title: "Introduction to Software Engineering", code: "CPSC 310", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'MATH100' : {title: "Differential Calculus with Applications to Physical Sciences and Engineering", code: "MATH 100", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'CHEM201' : {title: "Introduction to Physical Chemistry", code: "CHEM 201", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'GERM101' : {title: "Beginners' German I", code: "GERM 101", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'PSYC200' : {title: "Forensic Psychology", code: "PSYC 200", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'ASIA340' : {title: "Asian Horror Cinema: National Nightmares and Specters of Trauma", code: "ASIA 340", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'PSYC102' : {title: "Introduction to Developmental, Social, Personality, and Clinical Psychology", code: "PSYC 102", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'CPSC344' : {title: "Introduction to Human Computer Interaction Methods", code: "CPSC 344", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'ENGL112' : {title: "Strategies for University Writing", code: "ENGL 112", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'ARTH160' : {title: "Art in Europe to the Sixteenth Century", code: "ARTH 160", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'ANTH302' : {title: "Anthropology of Media", code: "ANTH 302", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'ASIA354' : {title: "History of the Indian Ocean World", code: "ASIA 354", credits: 2, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'CPSC110' : {title: "Computation, Programs, and Programming", code: "CPSC 110", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'PHYS230' : {title: "Introduction to General Relativity", code: "PHYS 230", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'FRE460' :  {title: "Economics of Food Consumption", code: "FRE 460", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'SPAN220' : {title: "Introduction to the Analysis of Hispanic Cultural Texts", code: "SPAN 220", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'JAPN101' : {title: "Beginning Japanese I", code: "JAPN 101", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
+	'PHIL114' : {title: "Minds and Machines", code: "PHIL 114", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: ""}
 };
 
-var featuredQ =    ['CPSC310', 'MATH100', 'CHEM204', 'GERM101', 'PSYC200', 'ASIA340', 'PSYC102'];
-var recommendedQ1 = ['CPSC344', 'ENGL112', 'ARTH160', 'ANTH302', 'ENGL300', 'CPSC110', 'PHYS230'];
-var recommendedQ2 = ['ASIA340', 'ENGL112', 'ANTH302', 'FREN100', 'SPAN220', 'MEDI420', 'PHIL114'];
-var popularQ =     ['MATH100', 'ASIA340', 'CPSC344', 'CPSC110', 'PHYS230', 'MEDI420', 'PHIL114'];
-var recommendedQ = recommendedQ1;
+var popularQ =      ['CPSC310', 'MATH100', 'CHEM201', 'GERM101', 'PSYC200', 'JAPN101', 'PSYC102'];
+var recommendedQ =  ['CPSC344', 'ENGL112', 'ARTH160', 'ANTH302', 'ASIA354', 'CPSC110', 'PHYS230'];
+var featuredQ =     ['ASIA354', 'ANTH302', 'CPSC344', 'ASIA340', 'FRE460', 'JAPN101', 'PHIL114'];
 
-var wishlist = recommendedQ2;
+var wishlist = [];
 
 var currQ = featuredQ;
 var currIndex = 0;
 var currQuestion = 0;
 
-var NUM_COURSES_BESIDE = 2;
+var answered = false;
 
-function renderQueue(key) {
+function renderQueue(index) {
+	currIndex = index; 
+
 	var $queue = $(".tf-queue-window");
 	var $courseSlide = $queue.find(".main-course-option");
-	var course = courseMap[key];
-
-	$(".course-side").hide();
-	$(".details-link").hide();
-	$(".course-side-front").show();
-
-	$courseSlide.find(".course-code").html(course.code);
-	$courseSlide.find(".course-title").html(course.title);
-	$courseSlide.find(".course-short-description").html(course.shortDescription);
-	$courseSlide.find(".course-description").html(course.description);
-	$courseSlide.attr("course-key", key)
-
-	var courseIndexes = [];
-	var tmpIndex;
-	var index = 0;
-	
-	for (var i = NUM_COURSES_BESIDE; i > 0; i--) {
-		tmpIndex = currIndex - i;
-		courseIndexes[index] = tmpIndex < 0 ? currQ.length + tmpIndex : tmpIndex;
-		index++;
-	}	
-	
-	for (var i = 1; i <= NUM_COURSES_BESIDE; i++) {
-		tmpIndex = currIndex + i;
-		courseIndexes[index] = tmpIndex >= currQ.length ? tmpIndex - currQ.length : tmpIndex; 
-		index++;
-	}	
-	
 	var $courseOptions = $queue.find(".next-course-option");
-	for (var i = 0; i < $courseOptions.length; i++) {
-		var courseKey = currQ[courseIndexes[i]];
-		$($courseOptions[i]).find(".next-course-option-code").html(courseMap[courseKey].code);
-		$($courseOptions[i]).attr("course-key", courseKey);
-	}	
+	
+	$courseOptions.css("visibility", "hidden");
+	$courseSlide.css("visibility", "hidden");
+	$courseSlide.find(".yes-icon").css("visibility", "hidden");
+	
+	if (currQ.length > 0) {
+		var course = courseMap[currQ[index]];
+
+		$(".course-side").hide();
+		$(".details-link").hide();
+		$(".no-courses-msg").hide();
+		$(".course-side-front").show();
+		$courseSlide.css("visibility", "visible");
+
+		$courseSlide.find(".course-code").html(course.code);
+		$courseSlide.find(".course-title").html(course.title);
+		$courseSlide.find(".course-short-description").html(course.shortDescription);
+		$courseSlide.find(".course-description").html(course.description);
+		$courseSlide.find(".course-credits").html(course.credits);
+		$courseSlide.attr("course-key", currQ[index]);
+
+		$courseSlide.find(".yes-icon").css("visibility", wishlist.indexOf(currQ[index]) == -1 ? "visible" : "hidden");
+
+		var tmpIndex;
+		var courseKey;
+
+		tmpIndex = index - 2;
+		if (tmpIndex >= 0) {
+			courseKey = currQ[tmpIndex];
+			$($courseOptions[0]).find(".next-course-option-code").html(courseMap[courseKey].code);
+			$($courseOptions[0]).attr("course-key", courseKey);
+			$($courseOptions[0]).css("visibility", "visible");
+		}
+
+		tmpIndex = index - 1;
+		if (tmpIndex >= 0) {
+			courseKey = currQ[tmpIndex];
+			$($courseOptions[1]).find(".next-course-option-code").html(courseMap[courseKey].code);
+			$($courseOptions[1]).attr("course-key", courseKey);
+			$($courseOptions[1]).css("visibility", "visible");
+		}
+
+		tmpIndex = index + 1;
+		if (tmpIndex < currQ.length) {
+			courseKey = currQ[tmpIndex];
+			$($courseOptions[2]).find(".next-course-option-code").html(courseMap[courseKey].code);
+			$($courseOptions[2]).attr("course-key", courseKey);
+			$($courseOptions[2]).css("visibility", "visible");
+		}
+
+		tmpIndex = index + 2;
+		if (tmpIndex < currQ.length) {
+			courseKey = currQ[tmpIndex];
+			$($courseOptions[3]).find(".next-course-option-code").html(courseMap[courseKey].code);
+			$($courseOptions[3]).attr("course-key", courseKey);
+			$($courseOptions[3]).css("visibility", "visible");
+		}
+	} else {		
+		$(".no-courses-msg").show();
+	}
 };
 
 function centerQuestionnaireModal() {
@@ -82,12 +109,27 @@ function centerQuestionnaireModal() {
 	$modal.css("margin-top", window.innerHeight / 2 - $modal.height() / 2);
 };
 
+function calculateRecommendations() {
+	var index;
+	var queue = [];
+	var courses = $.map(courseMap, function(value, index) {
+	    return [index];
+	});
+
+	for (var i = 0; i < 7; i++) {
+		index = Math.floor((Math.random() * courses.length));
+		queue[i] = courses[index];
+	}
+
+	return queue;
+};
+
 window.onresize = function(e) {
 	centerQuestionnaireModal();
 };
 
 $(window).load(function() {		
- 	renderQueue(currQ[currIndex]);
+ 	renderQueue(currIndex);
 	
 	$(".details-link").click(function(e) {
 		$(".course-side").toggle();
@@ -96,24 +138,21 @@ $(window).load(function() {
  
 	$(".next-course-option").click(function(e) {
 		var courseKey = $(e.target).attr("course-key");
-		currIndex = currQ.indexOf(courseKey);
-		renderQueue(courseKey);
+		renderQueue(currQ.indexOf(courseKey));
 	});
 
 	$(".queue-nav-left").click(function(e) {
-		currIndex--;
-		if(currIndex < 0) {
-			currIndex = currQ.length - 1;
+		if(currIndex > 0) {
+			currIndex--;
 		}
-		renderQueue(currQ[currIndex]);
+		renderQueue(currIndex);
 	});
 
-	$(".queue-nav-right").click(function(e) {
-		currIndex++;
-		if(currIndex >= currQ.length) {
-			currIndex = 0;
+	$(".queue-nav-right").click(function(e) {		
+		if(currIndex < currQ.length - 1) {
+			currIndex++;
 		}
-		renderQueue(currQ[currIndex]);
+		renderQueue(currIndex);
 	});
 
 	$(".queue-header-option").click(function(e) {		
@@ -135,8 +174,9 @@ $(window).load(function() {
 				currQ = wishlist;				
 				break;
 		}		
-		renderQueue(currQ[0]);
-		$(".yes-icon").toggle(queue != "wishlist");
+		
+		renderQueue(0);
+				
 		$(".tf-queue-footer").toggle(queue == "recommended");
 	});
 
@@ -149,6 +189,12 @@ $(window).load(function() {
 	});
 
 	$(".close-questionnaire-modal").click(function(e) {
+		if (answered) {
+			recommended = calculateRecommendations();
+			currQ = recommended;
+			renderQueue(0);
+			answered = false;
+		}
 		var $modal = $("#tf-modal-questionnaire");
 		$modal.find("input[type=radio]").prop("checked", false);
 		$modal.hide();
@@ -162,6 +208,7 @@ $(window).load(function() {
 		
 		if ($slide.find("input[type=radio]:checked").length > 0) {
 			questionnaireTopics.splice(currQuestion, 1);
+			answered = true;
 		} else {
 			currQuestion++;
 		}
@@ -187,8 +234,15 @@ $(window).load(function() {
 		if (window.confirm("Are you sure you want to remove " + courseMap[courseKey].code + " from your queue?")) {
 			var index = currQ.indexOf(courseKey);
 			currQ.splice(index, 1);	
-			currIndex = index;		
-			renderQueue(currQ[currIndex]);
+			if (index >= currQ.length)
+				index = currQ.length - 1;
+			renderQueue(index);
 		}
+	});
+
+	$(".yes-icon.tf-icon-button").click(function(e) {
+		var courseKey = $(e.target).closest(".main-course-option").attr("course-key");
+		wishlist.push(courseKey);
+		$(this).css("visibility", "hidden");
 	});
 });
