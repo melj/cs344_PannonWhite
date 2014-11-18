@@ -119,6 +119,7 @@ function calculateRecommendations() {
 	for (var i = 0; i < 7; i++) {
 		index = Math.floor((Math.random() * courses.length));
 		queue[i] = courses[index];
+		courses.splice(index, 1);
 	}
 
 	return queue;
