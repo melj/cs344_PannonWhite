@@ -151,6 +151,9 @@ $(window).load(function() {
  
 	$(".next-course-option").click(function(e) {
 		var courseKey = $(e.target).attr("course-key");
+		if (!courseKey) { // may have clicked on elements within it, if so, propageate up
+			courseKey = $(e.target).closest(".next-course-option").attr("course-key");
+		}				
 		renderQueue(currQ.indexOf(courseKey));
 	});
 
