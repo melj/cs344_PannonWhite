@@ -283,6 +283,12 @@ a:hover {
 	margin: 3px;
 }
 
+.main-course-option .thumbs-button {
+	background: url("../images/Untitled-4.png");
+	height: 85px;
+	width: 30%;
+}
+
 .main-course-option .details-button {
 	float: right;
 }
