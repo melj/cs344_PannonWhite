@@ -1,3 +1,9 @@
+function assignGradesDist() {
+	var index = Math.floor(Math.random() * 3)
+	//$(".grades-dist").css("background-image", 'url("' + distributionImages[index] + '")');
+	return distributionImages[index];
+}
+
 var questionnaireTopics = [
 	"Computer Science", "Psychology", "Math", "Physics", "English", "Anthropology", "Media Arts", "Cooking", "Wine Tasting", "Biology"
 ];
@@ -21,6 +27,7 @@ var courseMap = {
 	'SPAN220' : {title: "Introduction to the Analysis of Hispanic Cultural Texts", code: "SPAN 220", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
 	'JAPN101' : {title: "Beginning Japanese I", code: "JAPN 101", credits: 4, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit. Cu mel adhuc soleat contentiones, animal iuvaret delectus ex ius. Ex vim vide delectus, reque elitr ornatus pro ei, has ex laoreet."},
 	'PHIL114' : {title: "Minds and Machines", code: "PHIL 114", credits: 3, shortDescription: "Lorem ipsum dolor sit amet, enim saepe vituperatoribus ne duo, ad pro probo consul. Est ad mandamus salutandi, simul doming eu eos, per ne amet graecis blandit.", description: ""}
+
 };
 
 var popularQ =      ['CPSC310', 'MATH100', 'CHEM201', 'GERM101', 'PSYC200', 'JAPN101', 'PSYC102'];
@@ -34,6 +41,9 @@ var currIndex = 0;
 var currQuestion = 0;
 
 var answered = false;
+
+var distributionImages = ["images/distribution1.png", "images/distribution2.png", "images/distribution3.png"];
+
 
 function renderQueue(index) {
 	currIndex = index; 
@@ -61,6 +71,8 @@ function renderQueue(index) {
 		$courseSlide.find(".course-description").html(course.description);
 		$courseSlide.find(".course-credits").html(course.credits);
 		$courseSlide.attr("course-key", currQ[index]);
+
+		$courseSlide.find(".grades-dist").css("background-image", 'url("' + course.gradeDist + '")')
 
 		$courseSlide.find(".yes-icon").css("visibility", wishlist.indexOf(currQ[index]) == -1 ? "visible" : "hidden");
 
