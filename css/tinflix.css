@@ -235,6 +235,18 @@ a:hover {
 	background-color: #f7f5f5;
 }
 
+.tf-queue-content .outer-course-option {
+	height: 80%; 
+	margin-top:20px; 
+	z-index: 3
+}
+
+.tf-queue-content .inner-course-option {
+	height: 90%; 
+	margin-top:12px; 
+	z-index: 4;
+}
+
 .tf-queue-content .left-course-option {
 	 border-right: none; 
 	 box-shadow: -1px 5px 25px 3px lightgrey;
@@ -259,6 +271,10 @@ a:hover {
 	padding: 20px;
 }
 
+.tf-course-controls {
+	position: relative;
+}
+
 .tf-course-controls .tf-icon-button {
 	opacity: 0.8;
 	height: 30px;
@@ -271,14 +287,18 @@ a:hover {
 }
 
 .tf-course-controls .no-icon {
-	float: left;
+	position: absolute;
+	top: -5px;
+	left: 0px;
 	background-image: url("../images/no.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
 .tf-course-controls .yes-icon {
-	float: right;
+	position: absolute;
+	top: -5px;
+	right: 0px;
 	background-image: url("../images/yes.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -292,7 +312,6 @@ a:hover {
 .main-course-option .details-img {
 	height: 90px;
 	width: 48%;
-/*	background: lavender; */
 	float:left;
 	margin: 3px;
 	background-repeat: no-repeat;
@@ -305,8 +324,16 @@ a:hover {
 	width: 30%;
 }
 
+.main-course-option .course-credit-container {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
 .main-course-option .details-button {
-	float: right;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
 
 .main-course-option .details-button:hover {
@@ -323,4 +350,8 @@ a:hover {
 
 .main-course-option .course-short-description {
 	margin: 40px 0px;
+}
+
+.main-course-option .course-side {
+	height: 81%;
 }
