@@ -20,17 +20,26 @@ a:hover {
 .tf-button {
 	background: white;
 	border: 1px solid;
-	padding: 2px 5px;
+	padding: 5px 10px;
 	border-radius: 3px;
 }
 
 .tf-button:hover {
 	cursor: pointer;
-	background-color: #f7f5f5;
 }
 
 .tf-button:active {
 	background: grey;
+}
+
+.tf-button.tf-button-blue {
+	background: #2a5673;
+	border: thin solid #274A61;
+	color:white;	
+}
+
+.tf-button.tf-button-blue:active {
+	background: #244961;
 }
 
 .tf-modal-backdrop {
@@ -88,7 +97,7 @@ a:hover {
 	text-align: center;
 	display: block;
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 0;
 	right: 0;
 	font-style: italic;
@@ -213,10 +222,12 @@ a:hover {
 }
 
 .tf-queue-content .course-option {
+	position:relative;
 	float: left;
 	border: thin solid black;
 	border-radius: 2px;
 	width: 120px;
+	background-color: white;
 }
 
 .tf-queue-content .next-course-option:hover {
@@ -224,14 +235,27 @@ a:hover {
 	background-color: #f7f5f5;
 }
 
+.tf-queue-content .left-course-option {
+	 border-right: none; 
+	 box-shadow: -1px 5px 25px 3px lightgrey;
+}
+
 .tf-queue-content .main-course-option {
 	width: 540px;
 	height: 250px;
 	padding: 10px;
 	text-align: center;
+	box-shadow: 1px 4px 25px 3px lightgrey;
+	z-index: 5;
+}
+
+.tf-queue-content .right-course-option {
+	 border-left: none; 
+	 box-shadow: 5px 2px 25px 3px lightgrey;
 }
 
 .tf-queue-content .next-course-option-code {
+	position: absolute;
 	padding: 20px;
 }
 
@@ -263,16 +287,6 @@ a:hover {
 .tf-queue-footer {
 	text-align: center;	
 	padding-top: 37px;
-}
-
-.tf-queue-footer .questionnaire-button {
-	background: #2a5673;
-	color:white;
-	padding: 5px 10px;
-}
-
-.tf-queue-footer .questionnaire-button:active {
-	background: #244961
 }
 
 .main-course-option .details-img {
