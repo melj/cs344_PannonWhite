@@ -73,8 +73,9 @@ function renderQueue(index) {
 		$courseSlide.attr("course-key", currQ[index]);
 
 		$courseSlide.find(".grades-dist").css("background-image", 'url("' + course.gradeDist + '")')
-
 		$courseSlide.find(".yes-icon").css("visibility", wishlist.indexOf(currQ[index]) == -1 ? "visible" : "hidden");
+
+		updateMoreInfoLink(course);
 
 		var tmpIndex;
 		var courseKey;
@@ -136,6 +137,15 @@ function calculateRecommendations() {
 
 	return queue;
 };
+
+function updateMoreInfoLink(course) {
+	var $link = $(".main-course-option").find(".details-button");
+	var href = "course_page.html?";
+	href += "title=" + course.code + " " + course.title + "&"
+	      + "description=" + course.description + "&"
+	      + "credits=" + course.credits;
+	$link.attr("href", href);
+};	
 
 window.onresize = function(e) {
 	centerQuestionnaireModal();
