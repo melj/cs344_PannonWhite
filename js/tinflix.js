@@ -73,7 +73,9 @@ function renderQueue(index) {
 		$courseSlide.attr("course-key", currQ[index]);
 
 		$courseSlide.find(".grades-dist").css("background-image", 'url("' + course.gradeDist + '")')
-		$courseSlide.find(".yes-icon").css("visibility", wishlist.indexOf(currQ[index]) == -1 ? "visible" : "hidden");
+		
+		var isInWishlist = wishlist.indexOf(currQ[index]) != -1;
+		$courseSlide.find(".yes-icon.tf-icon-button").css("visibility", isInWishlist ? "hidden" : "visible");
 
 		updateMoreInfoLink(course);
 
@@ -268,7 +270,12 @@ $(window).load(function() {
 
 	$(".yes-icon.tf-icon-button").click(function(e) {
 		var courseKey = $(e.target).closest(".main-course-option").attr("course-key");
-		wishlist.push(courseKey);
-		$(this).css("visibility", "hidden");
+		if (wishlist.indexOf(courseKey) < 0) {
+			wishlist.push(courseKey);
+			$(this).css("visibility", "hidden");
+			$(".added").fadeIn( "slow", function() {
+		    $(this).fadeOut("slow");
+		  });
+		}
 	});
 });
