@@ -41,6 +41,7 @@ var currIndex = 0;
 var currQuestion = 0;
 
 var answered = false;
+var NUM_COURSES_LOOP = 5;
 
 var distributionImages = ["images/distribution1.png", "images/distribution2.png", "images/distribution3.png"];
 
@@ -82,37 +83,32 @@ function renderQueue(index) {
 		var tmpIndex;
 		var courseKey;
 
-		tmpIndex = index - 2;
-		if (tmpIndex >= 0) {
-			courseKey = currQ[tmpIndex];
-			$($courseOptions[0]).find(".next-course-option-code").html(courseMap[courseKey].code);
-			$($courseOptions[0]).attr("course-key", courseKey);
-			$($courseOptions[0]).css("visibility", "visible");
+		for (var i = 1; i < 3; i++) {
+			tmpIndex = index - i;
+			if (currQ.length >= NUM_COURSES_LOOP && tmpIndex < 0) {
+				tmpIndex = currQ.length + tmpIndex;
+			}
+			if (tmpIndex >= 0) {
+				courseKey = currQ[tmpIndex];
+				$($courseOptions[2 - i]).find(".next-course-option-code").html(courseMap[courseKey].code);
+				$($courseOptions[2 - i]).attr("course-key", courseKey);
+				$($courseOptions[2 - i]).css("visibility", "visible");
+			}			
 		}
 
-		tmpIndex = index - 1;
-		if (tmpIndex >= 0) {
-			courseKey = currQ[tmpIndex];
-			$($courseOptions[1]).find(".next-course-option-code").html(courseMap[courseKey].code);
-			$($courseOptions[1]).attr("course-key", courseKey);
-			$($courseOptions[1]).css("visibility", "visible");
+		for (var i = 1; i < 3; i++) {
+			tmpIndex = index + i;
+			if (currQ.length >= NUM_COURSES_LOOP && tmpIndex >= currQ.length) {
+				tmpIndex = tmpIndex - currQ.length;
+			}
+			if (tmpIndex < currQ.length) {
+				courseKey = currQ[tmpIndex];
+				$($courseOptions[1 + i]).find(".next-course-option-code").html(courseMap[courseKey].code);
+				$($courseOptions[1 + i]).attr("course-key", courseKey);
+				$($courseOptions[1 + i]).css("visibility", "visible");
+			}
 		}
 
-		tmpIndex = index + 1;
-		if (tmpIndex < currQ.length) {
-			courseKey = currQ[tmpIndex];
-			$($courseOptions[2]).find(".next-course-option-code").html(courseMap[courseKey].code);
-			$($courseOptions[2]).attr("course-key", courseKey);
-			$($courseOptions[2]).css("visibility", "visible");
-		}
-
-		tmpIndex = index + 2;
-		if (tmpIndex < currQ.length) {
-			courseKey = currQ[tmpIndex];
-			$($courseOptions[3]).find(".next-course-option-code").html(courseMap[courseKey].code);
-			$($courseOptions[3]).attr("course-key", courseKey);
-			$($courseOptions[3]).css("visibility", "visible");
-		}
 	} else {		
 		$(".no-courses-msg").show();
 	}
@@ -170,14 +166,27 @@ $(window).load(function() {
 	});
 
 	$(".queue-nav-left").click(function(e) {
-		if(currIndex > 0) {
+		if(currIndex <= 0) {
+			if (currQ.length >= NUM_COURSES_LOOP) {
+				currIndex = currQ.length - 1;
+			} else {
+				currIndex = 0;
+			}
+		} else {
 			currIndex--;
 		}
+		
 		renderQueue(currIndex);
 	});
 
-	$(".queue-nav-right").click(function(e) {		
-		if(currIndex < currQ.length - 1) {
+	$(".queue-nav-right").click(function(e) {				
+		if(currIndex >= currQ.length - 1) {
+			if (currQ.length >= NUM_COURSES_LOOP) {
+				currIndex = 0;
+			} else {
+				currIndex = currQ.length - 1;
+			}
+		} else {
 			currIndex++;
 		}
 		renderQueue(currIndex);
