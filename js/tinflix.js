@@ -267,9 +267,10 @@ $(window).load(function() {
 			$slide.find(".question-topic").html(topic);
 			$slide.find("input[type=radio]").prop("checked", false);
 		} else {
-			$slide.html("<b>Yay</b>! There are no more questions for you!");			
+			$slide.html("<b>Yay</b>! There are no more questions for you!");				
 		}
-		
+
+		$modal.find(".questionnaire-next-button").toggle(topic != null);		
 		$slide.show();
 	});	
 
