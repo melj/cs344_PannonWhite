@@ -333,6 +333,7 @@ a:hover {
 
 .details-container .upvote-img {
 	background-image: url("../images/Untitled-4.png");
+	margin-left: 25px;
 	float: left;
 	height: 75px;
 	width: 75px;
@@ -345,7 +346,7 @@ a:hover {
 .details-container .upvote-details {
 	font-size: 30px;
 	position: absolute;
-	top: 12px;
+	top: 5px;
 	left: 80px;
 	line-height: 0.8;
 }
