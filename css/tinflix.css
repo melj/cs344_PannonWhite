@@ -355,6 +355,12 @@ a:hover {
 	font-size: 12px;
 }
 
+.grades-dist {
+	width: 259px;
+	height: 65px;
+	margin-top: 5px;
+}
+
 .main-course-option .course-credit-container {
 	position: absolute;
 	bottom: 10px;
