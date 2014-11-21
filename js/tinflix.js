@@ -79,6 +79,7 @@ function renderQueue(index) {
 		
 		var isInWishlist = wishlist.indexOf(currQ[index]) > -1;
 		$courseSlide.find(".yes-icon.tf-icon-button").css("visibility", isInWishlist ? "hidden" : "visible");
+		$courseSlide.find(".added").toggle(isInWishlist);
 
 		var isUpvoted = upvotedCourses.indexOf(currQ[index])  > -1;
 		$courseSlide.find(".do-upvote-link").toggle(!isUpvoted);
@@ -303,9 +304,7 @@ $(window).load(function() {
 		if (wishlist.indexOf(courseKey) < 0) {
 			wishlist.push(courseKey);
 			$(this).css("visibility", "hidden");
-			$(".added").fadeIn( "slow", function() {
-		    $(this).fadeOut("slow");
-		  });
+			$(".added").fadeIn(400);
 		}
 	});
 });
