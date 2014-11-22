@@ -149,13 +149,13 @@ a:hover {
 	background-image: url("../images/tinflix_header.png");
 	background-repeat: no-repeat;	
 	height: 1000px;
-	height: 495px;
+	height: 425px;
 }
 
 #tf-footer {
 	background-image: url("../images/tinflix_footer.png");
 	background-repeat: no-repeat;
-	height: 1000px;
+	height: 1020px;
 }
 
 #tf-queue {
